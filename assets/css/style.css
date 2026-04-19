@@ -1,35 +1,172 @@
+/* ==================== BODY BACKGROUND ==================== */
 body {
-    background: url(/assets/img/weather.jpg) no-repeat center center fixed;
-    transition: background 1s ease-in-out;
-    width: 100%;
-    height: 100vh;
+  background-image: url("/assets/img/night-sky.jpg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
 }
 
+/* ==================== HEADER ==================== */
 .top-bar {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: white;
+}
+
+.weather-icon {
+    width: 45px;
+    height: 45px;
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: white;
+}
+
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    font-size: 24px;
+    font-variation-settings: 
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24;
+    display: block;
+}
+
+/* ==================== SEARCH BOX ==================== */
 .searchBox {
-    width: 15%;
-    height: 15%;
-    padding: 5px 10px;
-    font-size: 16px;
+    position: relative;
+    width: 100%;
+    max-width: 420px;
 }
 
+.searchBox form {
+    display: flex;
+    align-items: center;
+    background: #2f3640;
+    border-radius: 50px;
+    padding: 8px 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.searchBox form:focus-within {
+    background: #3b4453;
+    box-shadow: 0 6px 20px rgba(47, 54, 64, 0.6);
+}
+
+.searchInput {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 16px;
+}
+
+.searchInput::placeholder {
+    color: #aaa;
+}
+
+.searchButton {
+    background: #2f3640;
+    color: white;
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.searchButton:hover {
+    background: #00b4d8;
+    transform: scale(1.05);
+}
+
+.searchButton .material-symbols-outlined {
+    font-size: 22px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-content {
+        justify-content: center;
+        text-align: center;
+        max-width: 100%;
+    }
+    
+    .searchBox {
+        max-width: 100%;
+    }
+}
+
+/* Weather Cards */
 .col-md-6 {
     height: 250px;
     width: 250px;
     text-align: center;
     border-radius: 15px;
     align-items: center;
-}
-
-.col-md-6 {
     background: transparent;
     backdrop-filter: blur(10px);
     border: 1px solid white;
-    border-radius: 8px;
+}
+
+/* Light & Dark Mode Buttons */
+.lightModeButton,
+.darkModeButton {
+    background: #2f3640;
+    color: white;
+    border: none;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.lightModeButton:hover,
+.darkModeButton:hover {
+    background: #00b4d8;
+    transform: scale(1.05);
+}
+
+.lightModeButton .material-symbols-outlined,
+.darkModeButton .material-symbols-outlined {
+    font-size: 22px;
 }
