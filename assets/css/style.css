@@ -1,6 +1,6 @@
 /* ==================== BODY BACKGROUND ==================== */
 body {
-  background-image: url("/assets/img/night-sky.jpg");
+  background-image: url('/assets/img/sky.avif');
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -11,13 +11,13 @@ body {
 
 /* ==================== HEADER ==================== */
 .top-bar {
-    background: rgba(0, 0, 0, 0.85);
+    background: rgb(84, 9, 218);
     backdrop-filter: blur(10px);
     padding: 15px 20px;
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgb(84, 9, 218);
 }
 
 .header-content {
@@ -32,8 +32,9 @@ body {
 
 .logo {
     display: flex;
+    justify-content: start;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     color: white;
 }
 
@@ -63,6 +64,7 @@ body {
 /* ==================== SEARCH BOX ==================== */
 .searchBox {
     position: relative;
+    right: 4%;
     width: 100%;
     max-width: 420px;
 }
@@ -70,7 +72,7 @@ body {
 .searchBox form {
     display: flex;
     align-items: center;
-    background: #2f3640;
+    background: rgb(78, 113, 255);
     border-radius: 50px;
     padding: 8px 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
@@ -78,8 +80,8 @@ body {
 }
 
 .searchBox form:focus-within {
-    background: #3b4453;
-    box-shadow: 0 6px 20px rgba(47, 54, 64, 0.6);
+    background: rgb(78, 113, 255);
+    box-shadow: 0 6px 20px rgb(78, 113, 255);
 }
 
 .searchInput {
@@ -93,11 +95,11 @@ body {
 }
 
 .searchInput::placeholder {
-    color: #aaa;
+    color: #ffffff;
 }
 
 .searchButton {
-    background: #2f3640;
+    background: rgb(78, 113, 255);
     color: white;
     border: none;
     width: 46px;
@@ -111,12 +113,16 @@ body {
 }
 
 .searchButton:hover {
-    background: #00b4d8;
+    background: #BBFBFF;
     transform: scale(1.05);
 }
 
 .searchButton .material-symbols-outlined {
     font-size: 22px;
+}
+
+.searchButton svg {
+    fill: white;
 }
 
 /* Responsive */
@@ -144,31 +150,63 @@ body {
     border: 1px solid white;
 }
 
-/* Light & Dark Mode Buttons */
-.lightModeButton,
-.darkModeButton {
-    background: #2f3640;
-    color: white;
-    border: none;
-    width: 46px;
-    height: 46px;
+:root {
+    --header-color: #2f3640;
+    --header-variant: #2f3640;
+    --base-variant: rgb(78, 113, 255);
+    --text-color: white;
+    --body-background-image: url('/assets/img/night-sky.jpg');
+    --footer-color: #2f3640;
+    --footer-variant: #2f3640;
+    --primary-color: white;
+}
+
+/* dark mode styling */
+.darkMode {
+    --header-color: #2f3640;
+    --header-variant: #2f3640;
+    --text-color: white;
+    --body-background-image: url('/assets/img/night-sky.jpg');
+    --footer-color: #2f3640;
+    --footer-variant: #2f3640;
+}
+/* Light & Dark Mode Buttons - button id "theme-switch"*/
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
     border-radius: 50%;
+    background-color: var(--base-variant);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 9999;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.lightModeButton:hover,
-.darkModeButton:hover {
-    background: #00b4d8;
+#theme-switch:hover {
+    background: #BBFBFF;
     transform: scale(1.05);
 }
 
-.lightModeButton .material-symbols-outlined,
-.darkModeButton .material-symbols-outlined {
-    font-size: 22px;
+#theme-switch svg{
+    fill: var(--primary-color);
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkMode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkMode #theme-switch svg:last-child {
+    display: block;
 }
 
 /*
