@@ -21,6 +21,6 @@ More features and improvements are coming soon!
 
 - HTML5
 - CSS3
-- JavaScript (Vanilla)
+- JavaScript
 
 ## 📂 Project Structure
