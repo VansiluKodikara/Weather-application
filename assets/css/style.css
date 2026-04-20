@@ -171,6 +171,7 @@ body {
     --footer-variant: #2f3640;
 }
 /* Light & Dark Mode Buttons - button id "theme-switch"*/
+/* ==================== THEME SWITCH BUTTON ==================== */
 #theme-switch {
     height: 50px;
     width: 50px;
@@ -193,7 +194,7 @@ body {
     transform: scale(1.05);
 }
 
-#theme-switch svg{
+#theme-switch svg {
     fill: var(--primary-color);
 }
 
