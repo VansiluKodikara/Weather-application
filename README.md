@@ -26,7 +26,7 @@ More features and improvements are coming soon!
 ## 📂 Project Structure
 
 Weather-application/
- - assets/                    **Images and icons**
- - weather-application.html   **Main application file**
+ - assets/                    (**Images and icons**)
+ - weather-application.html   (**Main application file**)
  - LICENSE
  - README.md
