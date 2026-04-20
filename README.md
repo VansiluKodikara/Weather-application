@@ -24,3 +24,9 @@ More features and improvements are coming soon!
 - JavaScript
 
 ## 📂 Project Structure
+
+Weather-application/
+├── assets/                    # Images and icons
+├── weather-application.html   # Main application file
+├── LICENSE
+└── README.md
