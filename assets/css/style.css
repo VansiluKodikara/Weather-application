@@ -1,6 +1,16 @@
+:root {
+    --header-color: #6200ee;
+    --text-color: white;
+    --body-background-image: url('/assets/img/sky.jpg!s2');
+    --footer-color: #6200ee;
+    --footer-variant: #2f3640;
+    --primary-color: white;
+    --base-variant: #6200ee;
+}
+
 /* ==================== BODY BACKGROUND ==================== */
 body {
-  background-image: url('/assets/img/sky.avif');
+  background-image: var(--body-background-image);
   background-repeat: no-repeat;
   background-position: center center;
   background-attachment: fixed;
@@ -10,14 +20,13 @@ body {
 }
 
 /* ==================== HEADER ==================== */
-.top-bar {
-    background: rgb(84, 9, 218);
+.header-top-bar {
+    background: var(--header-color);
     backdrop-filter: blur(10px);
     padding: 15px 20px;
     position: sticky;
     top: 0;
     z-index: 100;
-    border-bottom: 1px solid rgb(84, 9, 218);
 }
 
 .header-content {
@@ -75,13 +84,10 @@ body {
     background: rgb(78, 113, 255);
     border-radius: 50px;
     padding: 8px 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s ease;
 }
 
 .searchBox form:focus-within {
     background: rgb(78, 113, 255);
-    box-shadow: 0 6px 20px rgb(78, 113, 255);
 }
 
 .searchInput {
@@ -113,7 +119,7 @@ body {
 }
 
 .searchButton:hover {
-    background: #BBFBFF;
+    background: #1A1953;
     transform: scale(1.05);
 }
 
@@ -150,21 +156,12 @@ body {
     border: 1px solid white;
 }
 
-:root {
-    --header-color: #2f3640;
-    --header-variant: #2f3640;
-    --base-variant: rgb(78, 113, 255);
-    --text-color: white;
-    --body-background-image: url('/assets/img/night-sky.jpg');
-    --footer-color: #2f3640;
-    --footer-variant: #2f3640;
-    --primary-color: white;
-}
-
 /* dark mode styling */
 .darkMode {
     --header-color: #2f3640;
     --header-variant: #2f3640;
+    --form-color: #2f3640;
+    --search-box-color: #091413;
     --text-color: white;
     --body-background-image: url('/assets/img/night-sky.jpg');
     --footer-color: #2f3640;
@@ -173,9 +170,10 @@ body {
 /* Light & Dark Mode Buttons - button id "theme-switch"*/
 /* ==================== THEME SWITCH BUTTON ==================== */
 #theme-switch {
-    height: 50px;
-    width: 50px;
+    height: 46px;
+    width: 46px;
     padding: 0;
+    border: none;
     border-radius: 50%;
     background-color: var(--base-variant);
     display: flex;
@@ -190,7 +188,7 @@ body {
 }
 
 #theme-switch:hover {
-    background: #BBFBFF;
+    background: #1A1953;
     transform: scale(1.05);
 }
 
@@ -208,4 +206,24 @@ body {
 
 .darkMode #theme-switch svg:last-child {
     display: block;
+}
+
+.darkMode .searchBox form {
+    background-color: var(--search-box-color);
+}
+
+.darkMode .searchButton {
+    background-color: var(--header-variant);
+}
+
+.darkMode .searchButton:hover {
+    background: #C9CDCF;
+}
+
+.darkMode #theme-switch:hover {
+    background: #C9CDCF;
+}
+
+.darkMode #theme-switch {
+    background-color: var(--search-box-color);
 }
